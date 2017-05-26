@@ -1,0 +1,31 @@
+#map {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  position: static;
+  z-index: -1;
+}
+
+ul {
+    list-style-type: none;
+    margin-bottom: 25px;
+    width: 200px;
+    background-color: #f1f1f1;
+    float: right;
+    z-index: 1;
+    position: relative;
+}
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    position: relative;
+    z-index: 2;
+}
+
+li a:hover:not(.active) {
+    background-color: orange;
+    color: blue;
+}
+
