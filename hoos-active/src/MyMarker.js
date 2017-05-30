@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Marker from 'react-gmaps';
+import {Marker} from 'react-gmaps';
 
 const params = {key: 'AIzaSyDDFlmyKc2TKtcmWw-lC1-fmjJAh9qQv54'};
 export default class MyMarker extends React.Component{
@@ -50,7 +50,6 @@ render(){
                 draggable={true}
                 onDragEnd={this.onDragEnd}
             />
-
     )
 }
 }

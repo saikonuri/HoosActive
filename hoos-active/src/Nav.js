@@ -11,7 +11,7 @@ export default class Nav extends React.Component{
             <nav>
                 <ul>
                 <li><a id='username' href='profile'>Username</a></li>
-                <li><a class="active" id='event-button' href="#event">Create Event</a></li>
+                <li><a className="active" id='event-button' href="#event">Create Event</a></li>
                 <li><a id='edit-profile' href="#editProfile">Edit Profile</a></li>
                 </ul>
             </nav>
