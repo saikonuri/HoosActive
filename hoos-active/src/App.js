@@ -17,9 +17,37 @@ export default class App extends React.Component {
 constructor(props){
   super(props);
 
+var that = this;
   this.state={
-    events: []
+    events: [ 
+      {
+        lat: 38.03,
+        lng: -78.48,
+        eventName: 'Football',
+        creator: 'Vinny',
+        index: 0
+      },
+      {
+         lat: 38.028,
+         lng: -78.485,
+         eventName: 'Basketball',
+         creator: 'Rishi',
+         index: 1
+      },
+      {
+           lat: 38.029,
+           lng: -78.47,
+           eventName: 'Golf',
+           creator: 'Shawn',
+           index: 2
+      }
+
+    ],
+
+    popup: ''
   }
+
+  //this.showPopup=this.showPopup.bind(this);
 }
   onMapCreated(map) {
     map.setOptions({
@@ -40,12 +68,30 @@ constructor(props){
   };
 
   showPopup(){
-    console.log("Event Clicked");
-    
+    var index=this.index;
+    this.context.setState({
+      popup:  <Popup event={this.event}  creator={this.creator}/>
+    })
   };
 
 
   render() {
+    var that = this;
+    var eventList = this.state.events.map((event) =>{
+      return (
+        <Marker
+            lat={event.lat}
+            lng={event.lng}
+            event={event.eventName}
+            creator={event.creator}
+            draggable={true}
+            onDragEnd={this.onDragEnd}
+            onClick={this.showPopup}
+            index={this.index}
+            context={that}
+         />   
+      );
+    })
     return (
       <div className="App">
       <div className="map-container">
@@ -54,22 +100,20 @@ constructor(props){
                     height={'600px'}
                     lat={coords.lat}
                     lng={coords.lng}
-                    zoom={12}
+                    zoom={14}
                     loadingMessage={'Be happy'}
                     params={params}
                     onMapCreated={this.onMapCreated}>
-          <MyMarker 
-                    lat={38.0293}
-                    lng={78.4767}
-                    creator='Sai'
-                    event='Tennis'
-              />
+          {eventList}
           </Gmaps>  
         </div>
 
          <div className='nav-bar'>
            <Nav/>
          </div>
+         <div>
+            {this.state.popup}
+         </div>  
         </div>
       
     );

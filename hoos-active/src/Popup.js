@@ -10,9 +10,9 @@ export default class Popup extends React.Component{
 render(){
     return(
         <div >
-            <p>Event Name</p>
-            <p>Time</p>
-            <p>Creator Info</p>
+            <p>Event Name: {this.props.event}</p>
+            <p>Time: </p>
+            <p>Creator Info: {this.props.creator}</p>
             <p>Yes?No?</p>
             <p>People Going</p>
             <p>Description</p>
