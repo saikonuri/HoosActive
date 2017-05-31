@@ -9,11 +9,10 @@ export default class Nav extends React.Component{
     render(){
         return(
             <div id="nav" className= "navbar">
-                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                        <a href="#">Username</a>
-                        <a href="#">Edit Profile</a>
-                        <a href="#">Create Event</a>
-            </div>
+                        <a href="#" id="account">Username</a>
+                        <a href="#" id="events">Create Event</a>
+                        <a href="#" id="profile">Edit Profile</a>
+            </div>        
       )  
     }
 }
