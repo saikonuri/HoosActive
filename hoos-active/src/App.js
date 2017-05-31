@@ -4,6 +4,7 @@ import {Gmaps, InfoWindow, Circle, Marker} from 'react-gmaps';
 import Nav from './Nav.js';
 import Popup from './Popup.js';
 import MyMarker from './MyMarker.js';
+import MuiThemeProvider from  'material-ui/styles/MuiThemeProvider'; 
 
 const coords = {
   lat: 38.0293,
@@ -97,7 +98,7 @@ var that = this;
       <div className="map-container">
         <Gmaps id='map'
                     width={'100%'}
-                    height={'600px'}
+                    height={'1000px'}
                     lat={coords.lat}
                     lng={coords.lng}
                     zoom={14}
