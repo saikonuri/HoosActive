@@ -2,47 +2,59 @@
 #logo{
     z-index: 2;
     position: relative;
-    bottom: -200px;
+    bottom: -5px;
     right: -1050px;
+    height: 240px;
+    width: 200px;
 }
-.navbar {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.navbar a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.navbar a:hover, .offcanvas a:focus{
-    color: #f1f1f1;
-}
-
-.navbar .closebtn {
+#nav a {
     position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
+    left: 18px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 150px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
 }
 
-@media screen and (max-height: 450px) {
-  .navbar {padding-top: 15px;}
-  .navbar a {font-size: 18px;}
+#nav a:hover {
+    left: 0;
 }
+
+#profile {
+    top: 360px;
+    background-color: #555;
+}
+
+#account {
+    top: 240px;
+    background-color: #2196F3;
+}
+
+#events {
+    top: 300px;
+    background-color: #f44336;
+}
+
 #popup{
     list-style-type: none;   
 }
+
+#header{
+    background-color: lightblue;
+    height: 210px;
+    width: 1250px;
+    position: relative;
+    top: -1230px;
+    z-index: 0;
+}
+
+#subheader{
+    position: relative;
+    top: -1430px;
+    right: -400px;
+    font-size: 80px;
+}
+

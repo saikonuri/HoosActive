@@ -7,10 +7,17 @@
 .map-container {
   font-family: sans-serif;
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  margin: 0px 0px 0px 0px;
-  padding: 0px 0px 0px 0px;
+  z-index: -1;
 }
+
+  html,body{
+          height: 100%;
+          margin: 0;
+          padding: 0;
+     }
 
 
