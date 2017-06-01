@@ -4,21 +4,24 @@
         "lng": -78.48,
         "eventName": "Football",
         "creator": "Vinny",
-        "time": "Saturday"
+        "time": "Saturday",
+        "placeName": "Dell Courts"
       },
       {
          "lat": 38.028,
          "lng": -78.485,
          "eventName": "Basketball",
          "creator": "Rishi",
-         "time": "Monday"
+         "time": "Monday",
+         "placeName": "Dell Courts"
       },
       {
            "lat": 38.029,
            "lng": -78.47,
            "eventName": "Golf",
            "creator": "Shawn",
-           "time": "Monday"
+           "time": "Monday",
+           "placeName": "Dell Courts"        
       },
 
       {
@@ -26,27 +29,31 @@
             "lng": -78.468,
             "eventName": "Tennis",
             "creator": "Sai",
-            "time": "Monday"
+            "time": "Monday",
+            "placeName": "Dell Courts"
       },
       {
             "lat": 38.93,
             "lng": -78.48,
             "eventName": "Bowling",
-            "creator": "Krishna"
+            "creator": "Krishna",
+            "placeName": "Dell Courts"
       },
       {
             "lat": 38.03,
             "lng": -78.45,
             "eventName": "Lacrosee",
             "creator": "Ankith",
-            "time": "Monday"
+            "time": "Monday",
+            "placeName": "Dell Courts"
       },
       {
             "lat": 38.04,
             "lng": -78.44,
             "eventName": "Baseball",
             "creator": "Chiraag",
-            "time": "Monday"
+            "time": "Monday",
+            "placeName": "Dell Courts"
 
       }
 

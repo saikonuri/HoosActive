@@ -28,14 +28,14 @@ onCreate(e){
         })
 }
 
-onsubmit(x,y,n,c,d){
-    this.props.createEvent(x,y,n,c,d)
+onsubmit(x,y,n,c,d,p){
+    this.props.createEvent(x,y,n,c,d,p)
 }
 
 render(){
     var eventBox='';
     if (this.state.create){
-        eventBox = <CreateEventBox onsubmit={this.onsubmit.bind(this)}/>
+        eventBox = <CreateEventBox onsubmit={(x,y,n,c,d,p) => this.onsubmit(x,y,n,c,d,p)}/>
     }
  return(
      <div>

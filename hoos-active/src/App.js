@@ -13,8 +13,8 @@ import {
 import data from './data.json';
 
 const coords = {
-  lat: 38.0293,
-  lng: -78.4767
+  lat: 38.0336,
+  lng: -78.5080
 };
 
 const params = {key: 'AIzaSyDDFlmyKc2TKtcmWw-lC1-fmjJAh9qQv54'};
@@ -52,19 +52,21 @@ var that = this;
 
   showPopup(){
     var index=this.index;
+    console.log(this.place)
     this.context.setState({
-      popup:  <Popup event={this.event}  creator={this.creator} time={this.time}/>
+      popup:  <Popup event={this.event}  creator={this.creator} time={this.time} placeName={this.placeName}/>
     })
   };
 
-  createEvent(x,y,n,c,d){
+  createEvent(x,y,n,c,d,p){
       var updatedEvents = this.state.events
-      updatedEvents[updatedEvents.length] ={
+      updatedEvents[updatedEvents.length] = {
         lat: x,
         lng: y, 
         eventName: n,
         creator: c,
-        time: d
+        time: d,
+        placeName: p
       }
       this.setState({
         events: updatedEvents
@@ -81,6 +83,7 @@ var that = this;
             time={event.time}
             event={event.eventName}
             creator={event.creator}
+            placeName={event.placeName}
             draggable={false}
             onDragEnd={this.onDragEnd}
             onClick={this.showPopup}
@@ -105,7 +108,7 @@ var that = this;
               </Gmaps>  
             </div>
             <div className='nav-bar'>
-              <Nav createEvent={(x,y,n,c,d)=>this.createEvent(x,y,n,c,d)}/>
+              <Nav createEvent={(x,y,n,c,d,p)=>this.createEvent(x,y,n,c,d,p)}/>
             </div>
             <div>
                 {this.state.popup}       

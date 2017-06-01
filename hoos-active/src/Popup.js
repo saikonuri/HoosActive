@@ -14,6 +14,7 @@ render(){
             <a href="#">Sport : {this.props.event}</a>
             <a href="#"> Time: {this.props.time} </a>
             <a href="#">Creator: {this.props.creator}</a>
+            <a href="#">Place: {this.props.placeName}</a>
             <a href ="#"> Going?</a>
             {/*<a href="#"> People Going </a>*/}
             <a href="#"> Description </a>
