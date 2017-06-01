@@ -75,7 +75,6 @@ var that = this;
     })
   };
 
-
   render() {
     var that = this;
     var eventList = this.state.events.map((event) =>{
@@ -96,9 +95,10 @@ var that = this;
     return (
       <div className="App">
       <div className="map-container">
+      <img src="hooslogo.png" id="logo"/>
         <Gmaps id='map'
                     width={'100%'}
-                    height={'1000'}
+                    height={'100vh'}
                     lat={coords.lat}
                     lng={coords.lng}
                     zoom={14}
@@ -108,17 +108,16 @@ var that = this;
           {eventList}
           </Gmaps>  
         </div>
-
          <div className='nav-bar'>
            <Nav/>
          </div>
+         <MuiThemeProvider>
          <div>
-            {this.state.popup}
-         </div>  
-        </div>
-      
+            {this.state.popup}       
+         </div> 
+         </MuiThemeProvider> 
+        </div>      
     );
   }
-
 };
 
