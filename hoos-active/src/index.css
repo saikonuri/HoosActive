@@ -5,7 +5,7 @@ body {
 #logo{
     z-index: 2;
     position: absolute;
-    bottom: 400px;
+    bottom: 500px;
     right: 20px;
     height: 240px;
     width: 200px;
@@ -43,7 +43,7 @@ body {
 }
 
  #vertical-menu {
-    width: 200px;
+    width: 250px;
     z-index: 3;
     position: absolute;
     top: 250px;
@@ -68,4 +68,106 @@ body {
     color: white;
 }
 
+#createEvents{
+    position: absolute;
+    z-index: 3;
+    background-color: burlywood;
+    width: 200px;
+    height: 310px;
+    top: 180px;
+    right: 30px;
 
+}
+
+#container{
+    width: 100%vh;
+}
+
+.styled-select {
+   background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 96% 0;
+   height: 29px;
+   overflow: hidden;
+   width: 175px;
+   position: relative;
+   bottom: -18px;
+   right: -15px;
+}
+
+.styled-select select {
+   background: transparent;
+   border: none;
+   font-size: 14px;
+   height: 29px;
+   padding: 5px; /* If you add too much padding here, the options won't show in IE */
+   width: 268px;
+}
+
+.rounded {
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   border-radius: 20px;
+}
+.green   { background-color: #779126; }
+
+#locations{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: powderblue;
+}
+
+#location{
+    position: relative;
+    bottom: -8px;
+    right: -12px;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+
+#name{
+   position: relative;
+   right: -8px;
+   top: 55px;
+   font-style: italic;
+   font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif; 
+}
+
+#time{
+   position: relative;
+   right: -8px;
+   font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif; 
+   font-style: italic;
+   top: 30px;
+}
+
+#sport{
+   position: relative;
+   right: -10px;
+   top: 8px;
+   font-style: italic;
+   font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif; 
+}
+
+.style{
+    position: relative;
+    bottom: -10px;
+    right: -10px;
+}
+
+#submit{
+    position: relative;
+    top: 80px;
+    right: -65px;
+}
+
+#nameStyle{
+position: relative;
+bottom: -65px;
+}
+
+#timeStyle{
+position: relative;
+bottom: -43px;
+}
+
+#sportStyle{
+position: relative;
+bottom: -20px;
+}

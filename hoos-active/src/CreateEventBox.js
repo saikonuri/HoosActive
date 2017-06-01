@@ -95,30 +95,32 @@ export default class CreateEventBox extends React.Component{
 
         render(){
             return(
-                <form>
-                    Location:<br/>
-                    <select id='options' value={this.state.selectValue} onChange={(e) => this.handleLocationChange(e)}>
-                        <option value={0}>AFC</option>
-                        <option value={1}>Slaughter</option>
-                        <option value={2}>Mem</option>
-                        <option value={3}>Snyder Tennis Courts</option>
-                        <option value={4}>Dell Courts</option>
-                        <option value={5}>North Grounds</option>
-                        <option value={6}>Nameless Field</option>
-                        <option value={7}>Carr's Hil Field</option>
-                        <option value={8}>Old Dorms Tennis Courts</option>
-                    </select>
+                <form id ="createEvents" className="container">
+                    <text id="location">Location:</text> <br/>
+                    <div className="styled-select green rounded">
+                        <select id="locations"value={this.state.selectValue} onChange={(e) => this.handleLocationChange(e)}>
+                            <option value={0}>AFC</option>
+                            <option value={1}>Slaughter</option>
+                            <option value={2}>Mem</option>
+                            <option value={3}>Snyder Tennis Courts</option>
+                            <option value={4}>Dell Courts</option>
+                            <option value={5}>North Grounds</option>
+                            <option value={6}>Nameless Field</option>
+                            <option value={7}>Carr's Hil Field</option>
+                            <option value={8}>Old Dorms Tennis Courts</option>
+                        </select>
+                    </div>
                     <br/>      
-                    Sport:<br/>
-                    <input type="text" onChange={e => this.handleSportChange(e)}/>
+                    <text id="sport">Sport:</text><br/>
+                    <input id="sportStyle"className="style" type="text" placeholder="ex:football" onChange={e => this.handleSportChange(e)}/>
                     <br/>
-                    Time:<br/>
-                    <input type="text" placeholder="HH:MM" onChange={e =>this.handleTimeChange(e)}/>
+                    <text id="time">Time:</text><br/>
+                    <input id="timeStyle" type="text" className="style" placeholder="HH:MM" onChange={e =>this.handleTimeChange(e)}/>
                     <br/>
-                     Your Name:<br/>
-                    <input type="text" onChange={e => this.handleNameChange(e)}/>
+                     <text id="name"> Your Name:</text><br/>
+                    <input id="nameStyle" className="style" type="text" placeholder="ex:Shawn" onChange={e => this.handleNameChange(e)}/>
                     <br/>
-                    <button onClick={e => this.onSubmit(e)}> Submit </button>
+                    <button id="submit" className="style" onClick={e => this.onSubmit(e)}> Submit </button>
                 </form>    
             )
         }
