@@ -10,12 +10,12 @@ export default class Popup extends React.Component{
 render(){
     return(
         <div id="vertical-menu">
-            <a href="#" className="menu">Menu</a>
-            <a href="#">Event Name : {this.props.event}</a>
-            <a href="#"> Time: </a>
-            <a href="#">Creator Info: {this.props.creator}</a>
-            <a href ="#"> Yes? No?</a>
-            <a href="#"> People Going </a>
+            <a href="#" className="menu">Game Details</a>
+            <a href="#">Sport : {this.props.event}</a>
+            <a href="#"> Time: {this.props.time} </a>
+            <a href="#">Creator: {this.props.creator}</a>
+            <a href ="#"> Going?</a>
+            {/*<a href="#"> People Going </a>*/}
             <a href="#"> Description </a>
         </div>
     )
