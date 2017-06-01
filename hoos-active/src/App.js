@@ -5,6 +5,12 @@ import Nav from './Nav.js';
 import Popup from './Popup.js';
 import MyMarker from './MyMarker.js';
 import MuiThemeProvider from  'material-ui/styles/MuiThemeProvider'; 
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+import data from './data.json';
 
 const coords = {
   lat: 38.0293,
@@ -20,31 +26,7 @@ constructor(props){
 
 var that = this;
   this.state={
-    events: [ 
-      {
-        lat: 38.03,
-        lng: -78.48,
-        eventName: 'Football',
-        creator: 'Vinny',
-        index: 0
-      },
-      {
-         lat: 38.028,
-         lng: -78.485,
-         eventName: 'Basketball',
-         creator: 'Rishi',
-         index: 1
-      },
-      {
-           lat: 38.029,
-           lng: -78.47,
-           eventName: 'Golf',
-           creator: 'Shawn',
-           index: 2
-      }
-
-    ],
-
+    events: data,
     popup: ''
   }
 
@@ -71,9 +53,23 @@ var that = this;
   showPopup(){
     var index=this.index;
     this.context.setState({
-      popup:  <Popup event={this.event}  creator={this.creator}/>
+      popup:  <Popup event={this.event}  creator={this.creator} time={this.time}/>
     })
   };
+
+  createEvent(x,y,n,c,d){
+      var updatedEvents = this.state.events
+      updatedEvents[updatedEvents.length] ={
+        lat: x,
+        lng: y, 
+        eventName: n,
+        creator: c,
+        time: d
+      }
+      this.setState({
+        events: updatedEvents
+      })
+  }
 
   render() {
     var that = this;
@@ -82,41 +78,41 @@ var that = this;
         <Marker
             lat={event.lat}
             lng={event.lng}
+            time={event.time}
             event={event.eventName}
             creator={event.creator}
-            draggable={true}
+            draggable={false}
             onDragEnd={this.onDragEnd}
             onClick={this.showPopup}
-            index={this.index}
             context={that}
          />   
       );
     })
     return (
-      <div className="App">
-      <div className="map-container">
-      <img src="hooslogo.png" id="logo"/>
-        <Gmaps id='map'
-                    width={'100%'}
-                    height={'100vh'}
-                    lat={coords.lat}
-                    lng={coords.lng}
-                    zoom={14}
-                    loadingMessage={'Be happy'}
-                    params={params}
-                    onMapCreated={this.onMapCreated}>
-          {eventList}
-          </Gmaps>  
-        </div>
-         <div className='nav-bar'>
-           <Nav/>
-         </div>
-         <MuiThemeProvider>
-         <div>
-            {this.state.popup}       
-         </div> 
-         </MuiThemeProvider> 
-        </div>      
+      <Router>
+          <div className="App">
+          <div className="map-container">
+          <img src="hooslogo.png" id="logo"/>
+            <Gmaps id='map'
+                        width={'100%'}
+                        height={'100vh'}
+                        lat={coords.lat}
+                        lng={coords.lng}
+                        zoom={14}
+                        params={params}
+                        onMapCreated={this.onMapCreated}>
+              {eventList}
+              </Gmaps>  
+            </div>
+            <div className='nav-bar'>
+              <Nav createEvent={(x,y,n,c,d)=>this.createEvent(x,y,n,c,d)}/>
+            </div>
+            <div>
+                {this.state.popup}       
+            </div> 
+            <Route path='/popup' Component={Popup}/>
+            </div> 
+        </Router>     
     );
   }
 };

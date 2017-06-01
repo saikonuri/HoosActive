@@ -5,7 +5,7 @@ body {
 #logo{
     z-index: 2;
     position: absolute;
-    bottom: 500px;
+    bottom: 400px;
     right: 20px;
     height: 240px;
     width: 200px;
@@ -18,7 +18,7 @@ body {
     padding: 15px;
     width: 150px;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     color: white;
     border-radius: 0 5px 5px 0;
 }
@@ -47,6 +47,7 @@ body {
     z-index: 3;
     position: absolute;
     top: 250px;
+    left: 18px;
 }
 
  #vertical-menu a {
