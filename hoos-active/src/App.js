@@ -11,6 +11,17 @@ import {
   Link
 } from 'react-router-dom';
 import data from './data.json';
+import * as firebase from "firebase"
+
+  var config = {
+    apiKey: "AIzaSyDrI4zjaCyL4G-F8VnkJhzRCQEHhyfeB1w",
+    authDomain: "hoosactive.firebaseapp.com",
+    databaseURL: "https://hoosactive.firebaseio.com",
+    projectId: "hoosactive",
+    storageBucket: "hoosactive.appspot.com",
+    messagingSenderId: "484142672133"
+  };
+  firebase.initializeApp(config);
 
 const coords = {
   lat: 38.0336,
@@ -50,6 +61,38 @@ var that = this;
     console.log('onClick', e);
   };
 
+  saveEventsToStorage(){
+    var str = JSON.stringify(this.state.events);
+    localStorage.setItem("events",str)
+  }
+
+  getEventsFromStorage(){
+    var str = localStorage.getItem("events");
+    var events = JSON.parse(str);
+    if (!events){
+      this.setState({
+        events: data
+      })
+    }
+    else{
+      this.setState({
+        events: events
+      })
+    }
+  }
+
+  componentDidMount(){
+    this.getEventsFromStorage()
+    firebase.database().ref('events/events').on('value', (snapshot) => {
+           const events = snapshot.val()
+           if(events != null){
+             this.setState({
+               events: events
+             })
+           }
+         })
+  }
+
   showPopup(){
     var index=this.index;
     console.log(this.place)
@@ -71,6 +114,16 @@ var that = this;
       this.setState({
         events: updatedEvents
       })
+
+      var eventsRef = firebase.database().ref("events/");
+      eventsRef.set({
+        events : this.state.events
+      })
+      var eventsRef = firebase.database().ref("events/");
+       eventsRef.set({
+      events: this.state.events
+    })
+      this.saveEventsToStorage()
   }
 
   render() {
@@ -95,7 +148,7 @@ var that = this;
       <Router>
           <div className="App">
           <div className="map-container">
-          <img src="hooslogo.png" id="logo"/>
+          <img src="hooslogo.png" id="logo" className="container"/>
             <Gmaps id='map'
                         width={'100%'}
                         height={'100vh'}
