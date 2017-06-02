@@ -62,7 +62,7 @@ var that = this;
   };
 
   componentDidMount(){
-    firebase.database().ref('events/events').on('value', (snapshot) => {
+    firebase.database().ref('events/').on('value', (snapshot) => {
            const events = snapshot.val()
            if(events != null){
              this.setState({
@@ -76,7 +76,7 @@ var that = this;
     var index=this.index;
     console.log(this.place)
     this.context.setState({
-      popup:  <Popup event={this.event}  creator={this.creator} time={this.time} placeName={this.placeName}/>
+      popup:  <Popup event={this.event}  creator={this.creator} time={this.time} placeName={this.placeName} addPeopleGoing={() => this.context.addPeopleGoing()}/>
     })
   };
 
@@ -94,14 +94,14 @@ var that = this;
         events: updatedEvents
       })
 
-      var eventsRef = firebase.database().ref("events/");
+      var eventsRef = firebase.database().ref("/");
       eventsRef.set({
         events : this.state.events
-      })
-      var eventsRef = firebase.database().ref("events/");
-       eventsRef.set({
-      events: this.state.events
-    })
+      })   
+  }
+
+  addPeopleGoing(){
+    console.log("person added")
   }
 
   render() {
