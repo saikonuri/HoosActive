@@ -2,9 +2,10 @@
       {
         "lat": 38.03,
         "lng": -78.48,
-        "eventName": "Football",
-        "creator": "Vinny",
-        "time": "Saturday",
-        "placeName": "Dell Courts"
+        "eventName": "Sample Event",
+        "creator": "Sample Creator",
+        "time": "Sample Time",
+        "placeName": "Sample Place",
+        "numberOfPeople": 1
       }
     ]
