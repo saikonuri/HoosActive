@@ -61,28 +61,7 @@ var that = this;
     console.log('onClick', e);
   };
 
-  saveEventsToStorage(){
-    var str = JSON.stringify(this.state.events);
-    localStorage.setItem("events",str)
-  }
-
-  getEventsFromStorage(){
-    var str = localStorage.getItem("events");
-    var events = JSON.parse(str);
-    if (!events){
-      this.setState({
-        events: data
-      })
-    }
-    else{
-      this.setState({
-        events: events
-      })
-    }
-  }
-
   componentDidMount(){
-    this.getEventsFromStorage()
     firebase.database().ref('events/events').on('value', (snapshot) => {
            const events = snapshot.val()
            if(events != null){
@@ -123,7 +102,6 @@ var that = this;
        eventsRef.set({
       events: this.state.events
     })
-      this.saveEventsToStorage()
   }
 
   render() {
