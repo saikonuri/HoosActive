@@ -73,10 +73,8 @@ var that = this;
   }
 
   showPopup(){
-    var index=this.index;
-    console.log(this.place)
     this.context.setState({
-      popup:  <Popup event={this.event}  creator={this.creator} time={this.time} placeName={this.placeName} addPeopleGoing={() => this.context.addPeopleGoing()}/>
+      popup:  <Popup event={this.event}  creator={this.creator} time={this.time} placeName={this.placeName} number={this.number}/>
     })
   };
 
@@ -97,12 +95,13 @@ var that = this;
       var eventsRef = firebase.database().ref("/");
       eventsRef.set({
         events : this.state.events
-      })   
+      })
+      alert("Pickup Game Added! Click on Markers to view Details")   
   }
 
-  addPeopleGoing(){
-    console.log("person added")
-  }
+  // addPeopleGoing(newNumber){
+    
+  // }
 
   render() {
     var that = this;
@@ -114,6 +113,7 @@ var that = this;
             time={event.time}
             event={event.eventName}
             creator={event.creator}
+            number={event.numberOfPeople}
             placeName={event.placeName}
             draggable={false}
             onDragEnd={this.onDragEnd}

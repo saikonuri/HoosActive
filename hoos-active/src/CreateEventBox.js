@@ -115,7 +115,7 @@ export default class CreateEventBox extends React.Component{
                     <input id="sportStyle"className="style" type="text" placeholder="ex:football" onChange={e => this.handleSportChange(e)}/>
                     <br/>
                     <text id="time">Time:</text><br/>
-                    <input id="timeStyle" type="text" className="style" placeholder="HH:MM" onChange={e =>this.handleTimeChange(e)}/>
+                    <input id="timeStyle" type="text" className="style" placeholder="ex:2:00 PM" onChange={e =>this.handleTimeChange(e)}/>
                     <br/>
                      <text id="name"> Your Name:</text><br/>
                     <input id="nameStyle" className="style" type="text" placeholder="ex:Shawn" onChange={e => this.handleNameChange(e)}/>
